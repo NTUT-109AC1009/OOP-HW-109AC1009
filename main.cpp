@@ -24,21 +24,50 @@ int main(int argc, char *argv[])
 
 	Shape *shape;
 	Rectangle rect;
-	/**** Uncomment the code after you create class Circle and Triangle in shapes.h
 	Circle circle;
 	Triangle triangle;
-	****/
 
     if (strcmp(argv[1], "rectangle") == 0)
-		shape = &rect;
-	/**** Uncomment the code after you create class Circle and Triangle in shapes.h
+	{
+		if (argc != 4)
+		{
+			cout << "Error! You need to type two args of the width and height!" << endl;
+			cout << usage << endl;
+			return -2;
+		}
+		else
+		{
+			shape = &rect;
+		}
+	}
 	else if (strcmp(argv[1], "triangle") == 0)
-		shape = &triangle;
+	{
+		if (argc != 4)
+		{
+			cout << "Error! You need to type two args of the width and height!" << endl;
+			cout << usage << endl;
+			return -2;
+		}
+		else
+		{
+			shape = &triangle;
+		}
+	}
 	else if (strcmp(argv[1], "circle") == 0)
-		shape = &circle;
-	*****/
-	else {
-		cout << "Error! Unknown shape type" << endl;
+	{
+		if (argc == 4)
+		{
+			cout << "Error! You need only to type one width of the circle!" << endl;
+			return -2;
+		}
+		else
+		{
+			shape = &circle;
+		}
+	}
+	else 
+	{
+		cout << "Error! Unknown shape type!!!" << endl;
 		return -2;
 	}
 
